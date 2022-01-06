@@ -1,0 +1,36 @@
+server:
+  port: 8083
+#mybatis 配置
+mybatis:
+  type-aliases-package: com.kuang.springcloud.pojo
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml
+#spring的 配置
+spring:
+  application:
+    name: springcloud-provider-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource # 数据源
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db02?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: 123456
+#eureka的配置
+eureka:
+  instance:
+    instance_id: springcloud-provider-dept8002
+  client:
+    service-url: # 服务注册到哪里
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+
+# 暴露 info 端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#info 配置
+info:
+  app.name: zhq-microservicecloud
+  company.name: www.zhq.com
+
