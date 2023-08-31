@@ -24,6 +24,7 @@ public class DeptProvider_8001 {
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new HystrixMetricsStreamServlet());
         //访问该页面就是监控页面
         servletRegistrationBean.addUrlMappings("/actuator/hystrix.stream");
+        //就是加个注释
         return servletRegistrationBean;
     }
 }
