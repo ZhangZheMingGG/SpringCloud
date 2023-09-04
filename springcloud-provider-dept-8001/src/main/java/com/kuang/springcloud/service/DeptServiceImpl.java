@@ -2,9 +2,11 @@ package com.kuang.springcloud.service;
 
 import com.kuang.springcloud.pojo.Dept;
 import com.kuang.springcloud.dao.DeptDao;
+import org.apache.commons.lang.time.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -26,5 +28,10 @@ public class DeptServiceImpl implements DeptService{
     @Override
     public List<Dept> queryAll() {
         return deptDao.queryAll();
+    }
+
+
+    public static void main(String[] args) {
+        System.out.println(DateUtils.addDays(new Date(), 1));
     }
 }
