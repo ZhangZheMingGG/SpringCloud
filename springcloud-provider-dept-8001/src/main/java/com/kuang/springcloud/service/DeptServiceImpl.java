@@ -33,5 +33,7 @@ public class DeptServiceImpl implements DeptService{
 
     public static void main(String[] args) {
         System.out.println(DateUtils.addDays(new Date(), 1));
+        DeptService deptService  = new DeptServiceImpl();
+        System.out.println(deptService.queryAll());
     }
 }
