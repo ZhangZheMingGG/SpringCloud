@@ -36,5 +36,6 @@ public class DeptServiceImpl implements DeptService{
         DeptService deptService  = new DeptServiceImpl();
         System.out.println(deptService.queryAll());
         System.out.println(deptService.addDept(new Dept("dsad")));
+        System.out.println(deptService.queryById(1L));
     }
 }
